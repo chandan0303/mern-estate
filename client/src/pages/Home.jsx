@@ -17,7 +17,7 @@ const Home = () => {
   useEffect(() => {
     const fetchOfferListings = async () => {
       try {
-        const res = await fetch("/api/listing/get?offer=true&limit=4");
+        const res = await fetch("/api/listing/get?offer=true&limit=3");
         const data = await res.json();
         setOfferListings(data);
         fetchRentListings();
@@ -27,7 +27,7 @@ const Home = () => {
     };
     const fetchRentListings = async () => {
       try {
-        const res = await fetch("/api/listing/get?type=rent&limit=4");
+        const res = await fetch("/api/listing/get?type=rent&limit=3");
         const data = await res.json();
         setRentListings(data);
         fetchSaleListings();
@@ -37,7 +37,7 @@ const Home = () => {
     };
     const fetchSaleListings = async () => {
       try {
-        const res = await fetch("/api/listing/get?type=sale&limit=4");
+        const res = await fetch("/api/listing/get?type=sale&limit=3");
         const data = await res.json();
         setSaleListings(data);
       } catch (error) {
@@ -95,7 +95,7 @@ const Home = () => {
       {/* listing results for offer, sale and rent */}
       <div className=" max-w-6xl mx-auto p-3 flex flex-col gap-8 my-10">
         {offerListings && offerListings.length > 0 && (
-          <div>
+          <div className="p-9">
             <div className="my-3">
               <h2 className="text-2xl font-semibold text-slate-600">
                 Recent offers
@@ -115,7 +115,7 @@ const Home = () => {
           </div>
         )}
         {rentListings && rentListings.length > 0 && (
-          <div>
+          <div className="p-9">
             <div className="my-3">
               <h2 className="text-2xl font-semibold text-slate-600">
                 Recent places for rent
@@ -135,7 +135,7 @@ const Home = () => {
           </div>
         )}
         {saleListings && saleListings.length > 0 && (
-          <div>
+          <div className="p-9">
             <div className="my-3">
               <h2 className="text-2xl font-semibold text-slate-600">
                 Recent places for sale
