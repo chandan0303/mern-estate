@@ -306,13 +306,13 @@ const Profile = () => {
               <div className="flex flex-col items-center">
                 <button
                   onClick={() => handleListingDelete(listing._id)}
-                  className="text-red-700 uppercase p-1 border rounded shadow-md w-full hover:shadow-red-700"
+                  className="text-red-700 uppercase p-1 rounded  w-full hover:shadow-md"
                 >
                   Delete
                 </button>
                 <Link
                   to={`/update-listing/${listing._id}`}
-                  className="text-green-700 border rounded shadow-md w-full text-center hover:shadow-green-700"
+                  className="text-green-700 rounded w-full text-center hover:shadow-md"
                 >
                   <button className="uppercase p-1">Edit</button>
                 </Link>
